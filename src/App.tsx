@@ -30,7 +30,7 @@ function App() {
             <div className={' mx-auto'}>
                 <DarkModeButton/>
                 <Header/>
-                <Content className={'container mx-auto'}>
+                <Content>
                     <Table/>
                     <Projects/>
                 </Content>

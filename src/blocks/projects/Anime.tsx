@@ -7,25 +7,24 @@ import statuslist from '../../assets/anime/statuslist.png';
 import form from '../../assets/anime/form.png';
 import SimpleCarousel from "../../components/SimpleCarousel.tsx";
 import SourceLink from "../../components/SourceLink.tsx";
+import {FeatureList, ProjectArticle, ProjectDescription, ProjectHeader, TechnologyList} from "./Projects.tsx";
 
 const Anime = () => {
     return (
-        <article className={'flex flex-col mt-10 gap-x-8 gap-y-5 border-b dark:border-b-divideDark border-b-divideLight pb-5 '}>
+        <ProjectArticle>
             <Preview/>
             <Description/>
-        </article>
+        </ProjectArticle>
     );
 };
 
 const Description = () => (
-    <div className={'w-full'}>
-        <h3 className={'text-3xl font-medium '}>
+    <ProjectDescription>
+        <ProjectHeader>
             Онлайн энциклопедия по сериалам и фильмам
-        </h3>
-        <span className={''}>
-            Ключевые особенности
-        </span>
-        <ul className={' list-inside list-disc'}>
+        </ProjectHeader>
+        <span>Ключевые особенности</span>
+        <FeatureList>
             <li>Динамические SQL запросы поиска по параметрам - параметры запроса хранятся в url</li>
             <li>Отзывчивое взаимодействие - оптимистичные запросы к backend</li>
             <li>Адаптивный интерфейс</li>
@@ -33,9 +32,9 @@ const Description = () => (
             <li>Ведение списков просмотра видео: запланировано, смотрю, просмотренно, отложено</li>
             <li>Drag&Drop для перемещения видео между списками</li>
             <li>Встроенные средства для обновления контента</li>
-        </ul>
-        <span className={''}>Используемые технологии</span>
-        <div className={'flex whitespace-nowrap flex-wrap gap-x-2 gap-y-1'}>
+        </FeatureList>
+        <span>Используемые технологии</span>
+        <TechnologyList>
             <Item label={'Java Spring'}/>
             <Item label={'PostgreSQL'}/>
             <Item label={'JWT'}/>
@@ -44,9 +43,9 @@ const Description = () => (
             <Item label={'Zustand'}/>
             <Item label={'Tanstack Query'}/>
             <Item label={'Tailwind CSS'}/>
-        </div>
+        </TechnologyList>
         <SourceLink href={'https://github.com/kemper0110/video-library'}/>
-    </div>
+    </ProjectDescription>
 )
 
 const data: Resource[] = [
@@ -77,7 +76,7 @@ const data: Resource[] = [
     }
 ]
 const Preview = () => (
-    <div className={'w-full'}>
+    <div>
         <SimpleCarousel data={data} imageWidth={400} imageHeight={225} carouselWidth={600} carouselHeight={225}/>
     </div>
 )

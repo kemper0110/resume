@@ -7,6 +7,8 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+      },
       fontFamily: {
         "body": ['Plus Jakarta Sans']
       },

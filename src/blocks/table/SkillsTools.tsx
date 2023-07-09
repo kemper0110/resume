@@ -2,29 +2,23 @@
     C++20
     никому не интересно:
         asio(with c++20 coroutines), beast, bimap, circular buffer, Graph library, Intrusive
-        asm8086
-        STL
-    Knowledges
-    Technical English, want new frameworks, libraries
- */
+        asm8086 STL
+*/
 
 import {Item} from "../../components/Item.tsx";
 import {ReactNode} from "react";
+import {TableContent, TableHeader} from "./Table.tsx";
 
 const SkillsTools = () => {
     return (
-        <tr className={''}>
-            <th className={'md:px-3 md:py-2 md:table-cell hidden text-left md:align-top '}>
-                {/*<div className={'-rotate-90 whitespace-nowrap tracking-widest }>*/}
-                    Skills & Tools
-                {/*</div>*/}
-            </th>
-            <td className={'px-3 pb-3'}>
+        <tr>
+            <TableHeader title={'Skills & Tools'}/>
+            <TableContent>
                 <Languages/>
                 <Technologies/>
                 <Tools/>
                 <Knowledge/>
-            </td>
+            </TableContent>
         </tr>
     );
 };

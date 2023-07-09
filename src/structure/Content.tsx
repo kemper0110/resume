@@ -1,7 +1,8 @@
 import React from "react";
-const Content = ({...mainProps} : React.InputHTMLAttributes<HTMLElement>) => {
+import {twMerge} from "tailwind-merge";
+const Content = ({className, ...mainProps} : React.InputHTMLAttributes<HTMLElement>) => {
     return (
-        <main {...mainProps}>
+        <main {...mainProps} className={twMerge('container mx-auto', className)}>
 
         </main>
     );
