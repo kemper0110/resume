@@ -1,10 +1,14 @@
 import {Item} from "../../components/Item.tsx";
 import {Resource} from "../../components/Carousel.tsx";
+
 import main from '../../assets/anime/main.png';
+import mainThumbnail from '../../assets/anime/mainThumbnail.jpeg';
 import popup from '../../assets/anime/popup.png';
+import popupThumbnail from '../../assets/anime/popupThumbnail.jpeg';
 import detailed from '../../assets/anime/detailed.png';
 import statuslist from '../../assets/anime/statuslist.png';
 import form from '../../assets/anime/form.png';
+
 import SimpleCarousel from "../../components/SimpleCarousel.tsx";
 import SourceLink from "../../components/SourceLink.tsx";
 import {FeatureList, ProjectArticle, ProjectDescription, ProjectHeader, TechnologyList} from "./Projects.tsx";
@@ -51,12 +55,12 @@ const Description = () => (
 const data: Resource[] = [
     {
         title: 'Поиск видео',
-        imageUrl: main,
+        imageUrl: mainThumbnail,
         link: main
     },
     {
         title: 'Подробная информация при наведении на видео',
-        imageUrl: popup,
+        imageUrl: popupThumbnail,
         link: popup
     },
     {

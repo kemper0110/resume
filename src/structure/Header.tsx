@@ -3,27 +3,37 @@ import {BsGithub, BsTelegram} from "react-icons/bs";
 import {IoMail} from "react-icons/io5";
 import {ReactNode} from "react";
 import {ClassNameValue, twMerge} from "tailwind-merge";
+import avatar from '../assets/avatar/2.jpeg';
 
 const Header = () => {
     return (
-        <div className={'flex flex-col justify-between gap-8 pt-6'}>
-            <Title/>
-            <address className={'flex flex-col gap-3'}>
-                <Contact/>
-                <Address/>
-            </address>
+        <div className={'flex flex-col items-center gap-8 pt-6'}>
+            <div className={"flex md:flex-row-reverse flex-col items-center gap-x-8 gap-y-3"}>
+                <Avatar/>
+                <div>
+                    <Title/>
+                    <address className={'flex flex-col gap-3'}>
+                        <Contact/>
+                        <Address/>
+                    </address>
+                </div>
+            </div>
         </div>
     )
 };
 
+const Avatar = () => (
+    <div className={'bg-[#77cce9] w-[210px] h-[210px]'}
+         style={{clipPath: "circle(100px at 50% 50%)"}}
+    >
+        <img src={avatar} alt={'Данил Голосуев'}/>
+    </div>
+)
+
 const Title = () => (
-    <div className="flex-col justify-start items-center gap-1 inline-flex">
-        <div className="justify-start items-start gap-4 inline-flex">
-            <div className="text-[28px] font-extrabold">Данил Голосуев</div>
-        </div>
-        <div className="justify-start items-start gap-4 inline-flex">
-            <div className="text-[14px] font-medium">Full-stack Developer</div>
-        </div>
+    <div className="flex flex-col gap-1 items-center">
+        <div className="text-3xl font-extrabold">Данил Голосуев</div>
+        <div className="font-medium">Full-stack Developer</div>
     </div>
 )
 
