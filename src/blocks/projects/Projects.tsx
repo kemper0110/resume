@@ -7,6 +7,7 @@
 import Anime from "./Anime.tsx";
 import {ReactNode} from "react";
 import Chess from "./Chess.tsx";
+import SpaceX from "./SpaceX.tsx";
 
 const Projects = () => {
     return (
@@ -15,6 +16,7 @@ const Projects = () => {
             <SimpleTitle/>
             <div className={'divide-y dark:divide-divideDark divide-divideLight'}>
                 <Anime/>
+                <SpaceX/>
                 <Chess/>
             </div>
         </section>

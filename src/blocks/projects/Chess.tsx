@@ -59,12 +59,6 @@ const data: Resource[] = [
     }
 ];
 
-<SimpleCarousel data={data}
-    imageWidth={400} carouselWidth={600}
-    imageHeight={400}
-    carouselHeight={400}
-/>
-
 const Preview = () => (
     <div>
         <SimpleCarousel data={data}
