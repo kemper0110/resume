@@ -9,19 +9,15 @@ const template = fs.readFileSync(toAbsolute('dist/static/index.html'), 'utf-8');
 const render = (await import('./dist/server/entry-server.js')).SSRRender;
 
 // determine routes to pre-render from src/pages
-const routesToPrerender = fs.readdirSync(toAbsolute('src/pages')).map((file) => {
-    const name = file.replace(/\.tsx$/, '').toLowerCase();
-    return name === 'home' ? `/` : `/${name}`;
-});
+// const routesToPrerender = fs.readdirSync(toAbsolute('src')).map((file) => {
+//     const name = file.replace(/\.tsx$/, '').toLowerCase();
+//     return name === 'home' ? `/` : `/${name}`;
+// });
+// console.log(routesToPrerender[0])
 
 (async () => {
-    // pre-render each route...
-    for (const url of routesToPrerender) {
-        const appHtml = render(url);
-
-        const html = template.replace(`<!--app-html-->`, appHtml);
-
-        const filePath = `dist/static${url === '/' ? '/index' : url}.html`;
-        fs.writeFileSync(toAbsolute(filePath), html);
-    }
+    const appHtml = render();
+    const html = template.replace(`<!--app-html-->`, appHtml);
+    const filePath = `dist/static/index.html`;
+    fs.writeFileSync(toAbsolute(filePath), html);
 })();
