@@ -1,5 +1,3 @@
-import {CiLink} from "react-icons/ci";
-import {CgLink} from "react-icons/cg";
 import {BiLinkExternal} from "react-icons/bi";
 
 const OpenProjectLink = ({href}: { href: string }) => {
