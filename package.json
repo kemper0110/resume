@@ -16,12 +16,14 @@
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
     "generate": "vite build --outDir dist/static && npm run build:server && node prerender",
-    "serve": "cross-env NODE_ENV=production node server"
+    "serve": "cross-env NODE_ENV=production node server",
+    "serve:ssg": "serve dist/static"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
+    "serve": "^14.2.1",
     "tailwind-merge": "^1.13.2"
   },
   "devDependencies": {

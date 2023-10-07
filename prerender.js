@@ -8,13 +8,6 @@ const toAbsolute = (p) => path.resolve(__dirname, p);
 const template = fs.readFileSync(toAbsolute('dist/static/index.html'), 'utf-8');
 const render = (await import('./dist/server/entry-server.js')).SSRRender;
 
-// determine routes to pre-render from src/pages
-// const routesToPrerender = fs.readdirSync(toAbsolute('src')).map((file) => {
-//     const name = file.replace(/\.tsx$/, '').toLowerCase();
-//     return name === 'home' ? `/` : `/${name}`;
-// });
-// console.log(routesToPrerender[0])
-
 (async () => {
     const appHtml = render();
     const html = template.replace(`<!--app-html-->`, appHtml);
