@@ -3,16 +3,32 @@ import Content from "./structure/Content.tsx";
 import Table from "./blocks/table/Table.tsx";
 import Projects from "./blocks/projects/Projects.tsx";
 import {MdDarkMode, MdLightMode} from "react-icons/md";
-import {useEffect, useState} from "react";
+import {useState} from "react";
+
+type CbFn = (dark: boolean) => boolean
+const useDarkState = (): [boolean, (cb: CbFn) => void] => {
+    const [dark, _setDark] = useState(
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    )
+    const setDark = (cb: CbFn) => {
+        _setDark(dark => {
+            const new_dark = cb(dark)
+            if (new_dark) {
+                document.documentElement.classList.add('dark')
+                localStorage.theme = 'dark'
+            } else {
+                document.documentElement.classList.remove('dark')
+                localStorage.theme = 'light'
+            }
+            return new_dark
+        })
+    }
+    return [dark, setDark]
+}
 
 const DarkModeButton = () => {
-    const [dark, setDark] = useState(true)
-    useEffect(() => {
-        if(dark)
-            document.documentElement.classList.add('dark')
-        else
-            document.documentElement.classList.remove('dark')
-    }, [dark])
+    const [dark, setDark] = useDarkState()
     return (
         <button className={'absolute md:right-5 md:top-3 right-0'}
                 onClick={() => setDark(d => !d)}
