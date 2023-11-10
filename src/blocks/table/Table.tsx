@@ -1,8 +1,6 @@
 import {Education} from "./Education.tsx";
 import Experience from "./Experience.tsx";
 import SkillsTools from "./SkillsTools.tsx";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import tw from "twin.macro";
 
 export const TableHeader = tw.th`md:px-3 md:py-2 md:table-cell hidden text-left md:align-top`
