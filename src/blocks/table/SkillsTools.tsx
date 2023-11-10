@@ -8,24 +8,103 @@
 import {Item} from "../../components/Item.tsx";
 import {ReactNode} from "react";
 import {TableContent, TableHeader} from "./Table.tsx";
+import tw from "twin.macro";
 
 const SkillsTools = () => {
     return (
         <tr>
-            <TableHeader title={'Skills & Tools'}/>
+            <TableHeader>Skills & Tools</TableHeader>
             <TableContent>
-                <Languages/>
-                <Technologies/>
-                <Tools/>
-                <Knowledge/>
+                <FeatureTable caption={'Languages'}>
+                    <tr>
+                        <Heading>Frontend</Heading>
+                        <Data>
+                            <Item>HTML</Item>
+                            <Item>CSS</Item>
+                            <Item>JavaScript</Item>
+                            <Item>TypeScript</Item>
+                        </Data>
+                    </tr>
+                    <tr>
+                        <Heading>Backend</Heading>
+                        <Data>
+                            <Item>Java</Item>
+                            <Item>SQL</Item>
+                            <Item>C++</Item>
+                            <Item>C#</Item>
+                            <Item>Python</Item>
+                            <Item>JavaScript</Item>
+                            <Item>TypeScript</Item>
+                        </Data>
+                    </tr>
+                </FeatureTable>
+                <FeatureTable caption={'Technologies'}>
+                    <tr>
+                        <Heading>Frontend</Heading>
+                        <Data>
+                            <Item>Tailwind CSS</Item>
+                            <Item>React Query</Item>
+                            <Item>Redux Toolkit</Item>
+                            <Item>Zustand</Item>
+                        </Data>
+                    </tr>
+                    <tr>
+                        <Heading>Backend</Heading>
+                        <Data>
+                            <Item>Spring</Item>
+                            <Item>PostgreSQL</Item>
+                            <Item>HTTP/REST</Item>
+                        </Data>
+                    </tr>
+                </FeatureTable>
+                <FeatureTable caption={'Tools'}>
+                    <tr>
+                        <Heading>Coding</Heading>
+                        <Data>
+                            <Item>Git</Item>
+                            <Item>Ubuntu</Item>
+                        </Data>
+                    </tr>
+                </FeatureTable>
+                <FeatureTable caption={'Knowledge'}>
+                    <tr>
+                        <Heading>Programming</Heading>
+                        <Data>
+                            <Item>ООП</Item>
+                            <Item>Многопоточность и многозадачность</Item>
+                            <Item>Реляционные базы данных</Item>
+                        </Data>
+                    </tr>
+                    <tr>
+                        <Heading>Computer Science</Heading>
+                        <Data>
+                            <Item>ISO OSI</Item>
+                            <Item>TCP</Item>
+                            <Item>UDP</Item>
+                            <Item>HTTP</Item>
+                            <Item>REST API</Item>
+                            <Item>asm8086</Item>
+                        </Data>
+                    </tr>
+                    <tr>
+                        <Heading>Data structure</Heading>
+                        <Data>
+                            <Item>Стек</Item>
+                            <Item>Очередь</Item>
+                            <Item>Динамический массив</Item>
+                            <Item>Бинарное дерево</Item>
+                            <Item>Хеш-таблица</Item>
+                        </Data>
+                    </tr>
+                </FeatureTable>
             </TableContent>
         </tr>
     );
 };
 
 const FeatureTable = ({caption, children}: { caption: string, children: ReactNode | ReactNode[] }) => (
-    <table className={'mt-4'}>
-        <caption className={'text-lg font-semibold text-left align-top'}>
+    <table tw={'mt-4'}>
+        <caption tw={'text-lg font-semibold text-left align-top'}>
             {caption}
         </caption>
         <tbody>
@@ -33,107 +112,7 @@ const FeatureTable = ({caption, children}: { caption: string, children: ReactNod
         </tbody>
     </table>
 )
-const Heading = ({title}: {title: string}) => (
-    <th className={'dark:text-slate-400 dark:font-light font-thin min-w-[100px] text-left align-top'}>
-        {title}
-    </th>
-)
-const Data = ({children}: {children: ReactNode[]}) => (
-    <td className={'flex flex-wrap gap-1'}>
-        {children}
-    </td>
-)
-
-const Languages = () => (
-    <FeatureTable caption={'Languages'}>
-        <tr>
-            <Heading title={'Frontend'}/>
-            <Data>
-                <Item label={'HTML'}/>
-                <Item label={'CSS'}/>
-                <Item label={'JavaScript'}/>
-                <Item label={'TypeScript'}/>
-            </Data>
-        </tr>
-        <tr>
-            <Heading title={'Backend'}/>
-            <Data>
-                <Item label={'Java'}/>
-                <Item label={'SQL'}/>
-                <Item label={'C++'}/>
-                <Item label={'C#'}/>
-                <Item label={'Python'}/>
-                <Item label={'JavaScript'}/>
-                <Item label={'TypeScript'}/>
-            </Data>
-        </tr>
-    </FeatureTable>
-)
-
-const Technologies = () => (
-    <FeatureTable caption={'Technologies'}>
-        <tr>
-            <Heading title={'Frontend'}/>
-            <Data>
-                <Item label={'Tailwind CSS'}/>
-                <Item label={'React Query'}/>
-                <Item label={'Redux Toolkit'}/>
-                <Item label={'Zustand'}/>
-            </Data>
-        </tr>
-        <tr>
-            <Heading title={'Backend'}/>
-            <Data>
-                <Item label={'Spring'}/>
-                <Item label={'PostgreSQL'}/>
-                <Item label={'HTTP/REST'}/>
-            </Data>
-        </tr>
-    </FeatureTable>
-)
-const Tools = () => (
-    <FeatureTable caption={'Tools'}>
-        <tr>
-            <Heading title={'Coding'}/>
-            <Data>
-                <Item label={'Git'}/>
-                <Item label={'Ubuntu'}/>
-            </Data>
-        </tr>
-    </FeatureTable>
-)
-const Knowledge = () => (
-    <FeatureTable caption={'Knowledge'}>
-        <tr>
-            <Heading title={'Programming'}/>
-            <Data>
-                <Item label={'ООП'}/>
-                <Item label={'Многопоточность и многозадачность'}/>
-                <Item label={'Реляционные базы данных'}/>
-            </Data>
-        </tr>
-        <tr>
-            <Heading title={'Computer Science'}/>
-            <Data>
-                <Item label={'ISO OSI'}/>
-                <Item label={'TCP'}/>
-                <Item label={'UDP'}/>
-                <Item label={'HTTP'}/>
-                <Item label={'REST API'}/>
-                <Item label={'asm8086'}/>
-            </Data>
-        </tr>
-        <tr>
-            <Heading title={'Data structure'}/>
-            <Data>
-                <Item label={'Стек'}/>
-                <Item label={'Очередь'}/>
-                <Item label={'Динамический массив'}/>
-                <Item label={'Бинарное дерево'}/>
-                <Item label={'Хеш-таблица'}/>
-            </Data>
-        </tr>
-    </FeatureTable>
-)
+const Heading = tw.th`dark:text-slate-400 dark:font-light font-thin min-w-[100px] text-left align-top`
+const Data = tw.td`flex flex-wrap gap-1`
 
 export default SkillsTools;
