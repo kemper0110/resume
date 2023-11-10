@@ -4,6 +4,10 @@ import Table from "./blocks/table/Table.tsx";
 import Projects from "./blocks/projects/Projects.tsx";
 import {MdDarkMode, MdLightMode} from "react-icons/md";
 import {useState} from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import tw from "twin.macro";
+
 
 type CbFn = (dark: boolean) => boolean
 const useDarkState = (): [boolean, (cb: CbFn) => void] => {
@@ -30,7 +34,7 @@ const useDarkState = (): [boolean, (cb: CbFn) => void] => {
 const DarkModeButton = () => {
     const [dark, setDark] = useDarkState()
     return (
-        <button className={'absolute md:right-5 md:top-3 right-0'}
+        <button tw={'absolute md:right-5 md:top-3 right-0'}
                 onClick={() => setDark(d => !d)}
         >
             {
@@ -42,8 +46,8 @@ const DarkModeButton = () => {
 
 function App() {
     return (
-        <div className={'dark:bg-bgDark bg-bgLight min-h-screen pb-20 dark:text-primaryDark text-primaryLight'}>
-            <div className={' mx-auto'}>
+        <div tw={'dark:bg-bgDark bg-bgLight min-h-screen pb-20 dark:text-primaryDark text-primaryLight'}>
+            <div tw={'mx-auto'}>
                 <DarkModeButton/>
                 <Header/>
                 <Content>
