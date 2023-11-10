@@ -6,6 +6,11 @@ import image from 'vite-image'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/resume/",
+  resolve: {
+    alias: {
+      "@": "/src"
+    }
+  },
   plugins: [react({
     babel: {
       plugins: [
