@@ -13,45 +13,6 @@ import SimpleCarousel from "../../components/SimpleCarousel.tsx";
 import SourceLink from "../../components/SourceLink.tsx";
 import {FeatureList, ProjectArticle, ProjectDescription, ProjectHeader, TechnologyList} from "./Projects.tsx";
 
-const Anime = () => {
-    return (
-        <ProjectArticle>
-            <Preview/>
-            <Description/>
-        </ProjectArticle>
-    );
-};
-
-const Description = () => (
-    <ProjectDescription>
-        <ProjectHeader>
-            Онлайн энциклопедия по сериалам и фильмам
-        </ProjectHeader>
-        <span>Ключевые особенности</span>
-        <FeatureList>
-            <li>Динамические SQL запросы поиска по параметрам - параметры запроса хранятся в url</li>
-            <li>Отзывчивое взаимодействие - оптимистичные запросы к backend</li>
-            <li>Адаптивный интерфейс</li>
-            <li>Авторизация и аутентификация</li>
-            <li>Ведение списков просмотра видео: запланировано, смотрю, просмотренно, отложено</li>
-            <li>Drag&Drop для перемещения видео между списками</li>
-            <li>Встроенные средства для обновления контента</li>
-        </FeatureList>
-        <span>Используемые технологии</span>
-        <TechnologyList>
-            <Item label={'Java Spring'}/>
-            <Item label={'PostgreSQL'}/>
-            <Item label={'JWT'}/>
-            <Item label={'React'}/>
-            <Item label={'TypeScript'}/>
-            <Item label={'Zustand'}/>
-            <Item label={'Tanstack Query'}/>
-            <Item label={'Tailwind CSS'}/>
-        </TechnologyList>
-        <SourceLink href={'https://github.com/kemper0110/video-library'}/>
-    </ProjectDescription>
-)
-
 const data: Resource[] = [
     {
         title: 'Поиск видео',
@@ -79,10 +40,42 @@ const data: Resource[] = [
         link: form
     }
 ]
-const Preview = () => (
-    <div>
-        <SimpleCarousel data={data} imageWidth={400} imageHeight={225} carouselWidth={600} carouselHeight={225}/>
-    </div>
-)
+
+const Anime = () => {
+    return (
+        <ProjectArticle>
+            <div>
+                <SimpleCarousel data={data} imageWidth={400} imageHeight={225} carouselWidth={600} carouselHeight={225}/>
+            </div>
+            <ProjectDescription>
+                <ProjectHeader>
+                    Онлайн энциклопедия по сериалам и фильмам
+                </ProjectHeader>
+                <span>Ключевые особенности</span>
+                <FeatureList>
+                    <li>Динамические SQL запросы поиска по параметрам - параметры запроса хранятся в url</li>
+                    <li>Отзывчивое взаимодействие - оптимистичные запросы к backend</li>
+                    <li>Адаптивный интерфейс</li>
+                    <li>Авторизация и аутентификация</li>
+                    <li>Ведение списков просмотра видео: запланировано, смотрю, просмотренно, отложено</li>
+                    <li>Drag&Drop для перемещения видео между списками</li>
+                    <li>Встроенные средства для обновления контента</li>
+                </FeatureList>
+                <span>Используемые технологии</span>
+                <TechnologyList>
+                    <Item>Java Spring</Item>
+                    <Item>PostgreSQL</Item>
+                    <Item>JWT</Item>
+                    <Item>React</Item>
+                    <Item>TypeScript</Item>
+                    <Item>Zustand</Item>
+                    <Item>Tanstack Query</Item>
+                    <Item>Tailwind CSS</Item>
+                </TechnologyList>
+                <SourceLink href={'https://github.com/kemper0110/video-library'}/>
+            </ProjectDescription>
+        </ProjectArticle>
+    );
+};
 
 export default Anime;

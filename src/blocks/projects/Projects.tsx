@@ -5,16 +5,19 @@
 */
 
 import Anime from "./Anime.tsx";
-import {ReactNode} from "react";
 import Chess from "./Chess.tsx";
 import SpaceX from "./SpaceX.tsx";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import tw from "twin.macro";
 
 const Projects = () => {
     return (
-        <section className={'mt-10'}>
-            {/*<AwesomeTitle/>*/}
-            <SimpleTitle/>
-            <div className={'divide-y dark:divide-divideDark divide-divideLight'}>
+        <section tw={'mt-10'}>
+            <h2 tw={'text-2xl text-left pl-1 z-10'}>
+                Реализованные проекты
+            </h2>
+            <div tw={'divide-y dark:divide-divideDark divide-divideLight'}>
                 <Anime/>
                 <SpaceX/>
                 <Chess/>
@@ -23,49 +26,9 @@ const Projects = () => {
     );
 };
 
-export const ProjectArticle = ({children}: {children: ReactNode[]}) => (
-    <article className={'flex flex-col gap-y-5 py-5'}>
-        {children}
-    </article>
-)
-export const ProjectHeader = ({children}: {children: ReactNode}) => (
-    <h3 className={'text-3xl font-medium'}>
-        {children}
-    </h3>
-)
-
-export const FeatureList = ({children}: {children: ReactNode[]}) => (
-    <ul className={'list-inside list-disc'}>
-        {children}
-    </ul>
-)
-export const TechnologyList = ({children}: {children: ReactNode[]}) => (
-    <div className={'flex whitespace-nowrap flex-wrap gap-x-2 gap-y-1'}>
-        {children}
-    </div>
-)
-export const ProjectDescription = ({children}: {children: ReactNode[]}) => (
-    <div className={'px-3'}>
-        {children}
-    </div>
-)
-
-// const AwesomeTitle = () => (
-//     <div className={'relative h-[40px]'}>
-//         {/*<span className={'absolute top-0 left-0 z-0'}>*/}
-//         {/*    <img src={awesomeBg} alt={''} className={'w-[280px] h-[40px]'}/>*/}
-//         {/*</span>*/}
-//         <h2 className={'absolute top-0 left-0 text-2xl text-left pl-1 z-10 text-black'}>
-//             Реализованные проекты
-//         </h2>
-//     </div>
-// )
-
-const SimpleTitle = () => (
-    <h2 className={'text-2xl text-left pl-1 z-10'}>
-        Реализованные проекты
-    </h2>
-)
-
-
+export const ProjectArticle = tw.article`flex flex-col gap-y-5 py-5`
+export const ProjectHeader = tw.h3`text-3xl font-medium`
+export const FeatureList = tw.ul`list-inside list-disc`
+export const TechnologyList = tw.div`flex whitespace-nowrap flex-wrap gap-x-2 gap-y-1`
+export const ProjectDescription = tw.div`px-3`
 export default Projects;
