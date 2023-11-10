@@ -2,7 +2,6 @@ import {TfiCup} from "react-icons/tfi";
 import {Item} from "../../components/Item.tsx";
 import {BsFire} from "react-icons/bs";
 import {Accordion} from "../../components/Accordion.tsx";
-import {ReactNode} from "react";
 import {TableContent, TableHeader} from "./Table.tsx";
 import tw from "twin.macro";
 import {CalendarIcon} from "@/components/DatePeriod.tsx";
@@ -15,7 +14,8 @@ const Experience = () => {
             </TableHeader>
             <TableContent>
                 <CompanyWrapper>
-                    <TitleWrapper title={'День карьеры ДГТУ 2023 - Вебант'}>
+                    <TitleWrapper>
+                        <Title>День карьеры ДГТУ 2023 - Вебант</Title>
                         <SimpleDate>
                             <CalendarIcon/>
                             <time dateTime={'2021-03'}>Март 2023</time>
@@ -35,7 +35,10 @@ const Experience = () => {
                                                                                  tw='text-blue-400 underline'>hh.ru</a>,
                                 реализовал дополнительные возможности по улучшению пользовательского опыта.
                             </span>
-                                <Cup title={'Победитель'}/>
+                                <ResultWrapper>
+                                    <Cup/>
+                                    <ResultText>Победитель</ResultText>
+                                </ResultWrapper>
                             </AccordionLabelWrapper>
                         }
                     >
@@ -65,7 +68,8 @@ const Experience = () => {
 
 
                 <CompanyWrapper>
-                    <TitleWrapper title={'Хакатон 2023 - Ростелеком'}>
+                    <TitleWrapper>
+                        <Title>Хакатон 2023 - Ростелеком</Title>
                         <SimpleDate>
                             <CalendarIcon/>
                             <time dateTime={'2021-03'}>Март 2023</time>
@@ -77,10 +81,13 @@ const Experience = () => {
                     </ItemContainer>
                     <Accordion label={
                         <AccordionLabelWrapper>
-                <span>
-                    Разработал веб-приложение для работы с таблицами Excel внутри браузера.
-                </span>
-                            <Cup title={'Финалист'}/>
+                            <span>
+                                Разработал веб-приложение для работы с таблицами Excel внутри браузера.
+                            </span>
+                            <ResultWrapper>
+                                <Cup/>
+                                <ResultText>Финалист</ResultText>
+                            </ResultWrapper>
                         </AccordionLabelWrapper>
                     }>
                         <AccordionContentWrapper>
@@ -98,7 +105,8 @@ const Experience = () => {
 
 
                 <CompanyWrapper>
-                    <TitleWrapper title={'Хакатон 2021 - ТТК'}>
+                    <TitleWrapper>
+                        <Title>Хакатон 2021 - ТТК</Title>
                         <SimpleDate>
                             <CalendarIcon/>
                             <time dateTime={'2021-03'}>Март 2021</time>
@@ -115,7 +123,10 @@ const Experience = () => {
                                 Разработал парсер железнодорожных рейсов для старого и нового сайтов РЖД,
                                 успешно провел тестирование на совпадение рейсов.
                             </span>
-                            <Cup title={'Победитель'}/>
+                            <ResultWrapper>
+                                <Cup/>
+                                <ResultText>Победитель</ResultText>
+                            </ResultWrapper>
                         </AccordionLabelWrapper>
                     }>
                         <AccordionContentWrapper>
@@ -133,19 +144,11 @@ const Experience = () => {
     );
 };
 
-
-const TitleWrapper = ({title, children}: { title: string, children: ReactNode }) => (
-    <div tw={'flex flex-wrap justify-between'}>
-        <span tw={'font-medium text-2xl'}>{title}</span>
-        {children}
-    </div>
-)
-const Cup = ({title}: { title: string }) => (
-    <div tw={'flex gap-2 items-center'}>
-        <TfiCup/>
-        <span tw={'text-lg'}>{title}</span>
-    </div>
-)
+const Title = tw.span`font-medium text-2xl`
+const TitleWrapper = tw.div`flex flex-wrap justify-between`
+const ResultWrapper = tw.div`flex gap-2 items-center`
+const Cup = TfiCup
+const ResultText = tw.div`text-lg`
 const CompanyWrapper = tw.div`pb-5`
 const ItemContainer = tw.div`flex flex-wrap gap-x-3 gap-y-1 mt-2`
 const AccordionLabelWrapper = tw.div`max-w-[800px]`
