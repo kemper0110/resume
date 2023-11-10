@@ -1,48 +1,34 @@
 import {Education} from "./Education.tsx";
 import Experience from "./Experience.tsx";
 import SkillsTools from "./SkillsTools.tsx";
-import {ReactNode} from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import tw from "twin.macro";
 
-export const TableHeader = ({title}: { title: string }) => (
-    <th className={'md:px-3 md:py-2 md:table-cell hidden text-left md:align-top'}>
-        {title}
-    </th>
-)
+export const TableHeader = tw.th`md:px-3 md:py-2 md:table-cell hidden text-left md:align-top`
+export const TableContent = tw.td`px-3 py-3`
 
-export const TableContent = ({children}: { children: ReactNode | ReactNode[] }) => (
-    <td className={'px-3 py-3'}>
-        {children}
-    </td>
-)
-
-const Table = () => {
+export default function Table() {
     return (
         <section>
-            <table className={'w-full divide-solid divide-y dark:divide-divideDark divide-divideLight'}>
-                <tbody className={'divide-solid divide-y dark:divide-divideDark divide-divideLight'}>
+            <table tw={'w-full divide-solid divide-y dark:divide-divideDark divide-divideLight'}>
+                <tbody tw={'divide-solid divide-y dark:divide-divideDark divide-divideLight'}>
                 <Education/>
                 <Experience/>
                 <SkillsTools/>
                 </tbody>
                 <tfoot>
-                <TableFooter/>
+                <tr>
+                    <td colSpan={2} tw={'text-center pt-3 px-2'}>
+                        <span tw={'flex flex-col'}>
+                            <span>Знаю английский на уровне понимания тех. документации.</span>
+                            <span>Имею желание изучать новые библиотеки, фреймворки, платформы.</span>
+                            <span>Развиваюсь в обоих направлениях: frontend и backend.</span>
+                        </span>
+                    </td>
+                </tr>
                 </tfoot>
             </table>
         </section>
     );
 };
-const TableFooter = () => (
-    <tr>
-        <td colSpan={2} className={'text-center pt-3 px-2'}>
-            <span className={''}>
-                Знаю английский на уровне понимания тех. документации.
-                <br/>
-                Имею желание изучать новые библиотеки, фреймворки, платформы.
-                <br/>
-                Развиваюсь в обоих направлениях: frontend и backend.
-            </span>
-        </td>
-    </tr>
-)
-
-export default Table;
