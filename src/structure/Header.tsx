@@ -1,9 +1,15 @@
 import {TiLocation} from "react-icons/ti";
 import {BsGithub, BsTelegram} from "react-icons/bs";
 import {IoMail} from "react-icons/io5";
-import avatar from '../assets/avatar/2.jpeg';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
+import avatarAvif from '@/assets/avatar/2.jpeg?w=210&format=avif';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import avatarWebp from '@/assets/avatar/2.jpeg?w=210&format=webp';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import avatarJpeg from '@/assets/avatar/2.jpeg?w=210'
 import tw from "twin.macro";
 import {css} from "@emotion/react";
 
@@ -12,11 +18,15 @@ const Header = () => {
         <div tw={'flex flex-col items-center gap-8 pt-6'}>
             <div tw={"flex md:flex-row-reverse flex-col items-center gap-x-8 gap-y-3"}>
                 <div css={[
-                    tw`bg-[#77cce9] w-[210px] h-[210px]`,
+                    tw`w-[210px] h-[210px]`,
                     css`clip-path: circle(100px at 50% 50%)`
                 ]}
                 >
-                    <img src={avatar} alt={'Данил Голосуев'}/>
+                    <picture>
+                        <source srcSet={avatarAvif} type='image/avif'/>
+                        <source srcSet={avatarWebp} type='image/webp'/>
+                        <img loading={'eager'} src={avatarJpeg} alt={'Данил Голосуев'}/>
+                    </picture>
                 </div>
                 <div>
                     <div tw="flex flex-col gap-1 items-center">
