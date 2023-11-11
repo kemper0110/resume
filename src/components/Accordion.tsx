@@ -1,21 +1,18 @@
-import {ReactNode, useId, useState} from "react";
-import downOpenIcon from '../assets/downOpen.svg';
+import {ReactNode, useId} from "react";
 import downClosedIcon from '../assets/downClosed.svg';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import tw from "twin.macro";
 
 export const Accordion = ({label, children}: { label: ReactNode, children: ReactNode | ReactNode[] }) => {
-    const [open, setOpen] = useState(false)
     const id = useId()
     return (
         <div tw="w-full overflow-hidden pt-3">
-            <input tw="absolute opacity-0" className='peer' id={id} type="checkbox"
-                   onChange={e => setOpen(e.target.checked)}/>
+            <input tw="absolute opacity-0" className='peer' id={id} type="checkbox"/>
             <label tw={"flex md:flex-row flex-col-reverse gap-2 md:gap-8 border border-slate-600 rounded-lg items-center p-2 md:p-5 leading-normal cursor-pointer select-none"}
+                   className={'group'}
                    htmlFor={id}>
-                <img tw={'dark:invert'} src={open ? downOpenIcon : downClosedIcon} alt={'down'}/>
+                <img className={'peer-checked:group-[]:rotate-180'} tw={'dark:invert transform transition-transform'} src={downClosedIcon} alt={'down'}/>
                 {label}
             </label>
             <div tw="peer-checked:grid-rows-[1fr] grid transition-all overflow-hidden grid-rows-[0fr]">
@@ -26,3 +23,11 @@ export const Accordion = ({label, children}: { label: ReactNode, children: React
         </div>
     )
 }
+/*
+
+css`
+                        input:checked + label & {
+                          transform: rotate(180deg);
+                        }
+                    `
+ */
