@@ -1,15 +1,32 @@
 import {Item} from "../../components/Item.tsx";
 import {Resource} from "../../components/Carousel.tsx";
 
-import main from '../../assets/anime/main.png';
-import mainThumbnail from '../../assets/anime/mainThumbnail.jpeg';
-import popup from '../../assets/anime/popup.png';
-import popupThumbnail from '../../assets/anime/popupThumbnail.jpeg';
-import detailed from '../../assets/anime/detailed.png';
-import statuslist from '../../assets/anime/statuslist.png';
-import form from '../../assets/anime/form.png';
+import main from '@/assets/anime/main.png';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import mainThumbnail from '@/assets/anime/main.png?w=400&format=avif;webp;jpeg';
 
-import SimpleCarousel from "../../components/SimpleCarousel.tsx";
+import popup from '@/assets/anime/popup.png';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import popupThumbnail from '@/assets/anime/popup.png?w=400&format=avif;webp;jpeg';
+
+import detailed from '@/assets/anime/detailed.png';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import detailedThumbnail from '@/assets/anime/detailed.png?w=400&format=avif;webp;jpeg';
+
+import statuslist from '@/assets/anime/statuslist.png';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import statuslistThumbnail from '@/assets/anime/statuslist.png?w=400&format=avif;webp;jpeg';
+
+import form from '@/assets/anime/form.png';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import formThumbnail from '@/assets/anime/form.png?w=400&format=avif;webp;jpeg';
+
+import SimpleCarousel, {SimpleCarouselElement} from "../../components/SimpleCarousel.tsx";
 import SourceLink from "../../components/SourceLink.tsx";
 import {FeatureList, ProjectArticle, ProjectDescription, ProjectHeader, TechnologyList} from "./Projects.tsx";
 
@@ -26,17 +43,17 @@ const data: Resource[] = [
     },
     {
         title: 'Страница с подробной информацией',
-        imageUrl: detailed,
+        imageUrl: detailedThumbnail,
         link: detailed
     },
     {
         title: 'Ведение списка просмотра',
-        imageUrl: statuslist,
+        imageUrl: statuslistThumbnail,
         link: statuslist
     },
     {
         title: 'Обновление и добавление информации о видео',
-        imageUrl: form,
+        imageUrl: formThumbnail,
         link: form
     }
 ]
@@ -45,7 +62,19 @@ const Anime = () => {
     return (
         <ProjectArticle>
             <div>
-                <SimpleCarousel data={data} imageWidth={400} imageHeight={225} carouselWidth={600} carouselHeight={225}/>
+                <SimpleCarousel data={data} imageWidth={400} imageHeight={225} carouselWidth={600} carouselHeight={225}>
+                    {
+                        data.map((e, i) => (
+                            <SimpleCarouselElement key={i} resource={e} width={400} height={225}>
+                                <picture>
+                                    <source srcSet={e.imageUrl[0]} type={'image/avif'}/>
+                                    <source srcSet={e.imageUrl[1]} type={'image/webp'}/>
+                                    <img src={e.imageUrl[2]} alt={e.title}/>
+                                </picture>
+                            </SimpleCarouselElement>
+                        ))
+                    }
+                </SimpleCarousel>
             </div>
             <ProjectDescription>
                 <ProjectHeader>

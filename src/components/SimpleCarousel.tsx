@@ -1,5 +1,5 @@
 import type {Resource} from "./Carousel.tsx";
-import {useEffect, useRef, useState} from "react";
+import {ReactNode, useEffect, useRef, useState} from "react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -11,9 +11,10 @@ export interface SimpleCarouselProps {
     imageHeight: number | string
     carouselWidth: number | string
     carouselHeight: number | string
+    children: ReactNode | ReactNode[]
 }
 
-const SimpleCarousel = ({data, ...sizes}: SimpleCarouselProps) => {
+const SimpleCarousel = ({data, children, ...sizes}: SimpleCarouselProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const carousel = useRef<HTMLDivElement | null>(null);
     const movePrev = () => {
@@ -40,49 +41,47 @@ const SimpleCarousel = ({data, ...sizes}: SimpleCarouselProps) => {
     }, [currentIndex, sizes.imageWidth]);
 
     return (
-        <div className="mx-auto"
+        <div tw="mx-auto"
              style={{maxWidth: sizes.carouselWidth, height: sizes.carouselHeight}}
         >
-            <div className="relative overflow-hidden">
-                <div className="flex justify-between absolute top-0 left-0 w-full h-full">
+            <div tw="relative overflow-hidden">
+                <div tw="flex justify-between absolute top-0 left-0 w-full h-full">
                     <button
                         onClick={movePrev}
-                        className="md:hover:bg-blue-900/75 bg-blue-700/60 text-white w-10 h-full text-center opacity-90 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+                        tw="md:hover:bg-blue-900/75 bg-blue-700/60 text-white w-10 h-full text-center opacity-90 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
                         disabled={isDisabled('prev')}
                     >
                         <PrevIcon/>
-                        <span className="sr-only">Prev</span>
+                        <span tw="sr-only">Prev</span>
                     </button>
                     <button
                         onClick={moveNext}
-                        className="md:hover:bg-blue-900/75 bg-blue-700/60 text-white w-10 h-full text-center opacity-90 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+                        tw="md:hover:bg-blue-900/75 bg-blue-700/60 text-white w-10 h-full text-center opacity-90 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
                         disabled={isDisabled('next')}
                     >
                         <NextIcon/>
-                        <span className="sr-only">Next</span>
+                        <span tw="sr-only">Next</span>
                     </button>
                 </div>
                 <div
                     ref={carousel}
-                    className="relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+                    tw="relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
                 >
-                    {
-                        data.map((e, i) => <Element key={i} resource={e}
-                                                    width={sizes.imageWidth} height={sizes.imageHeight}/>)
-                    }
+                    {children}
                 </div>
             </div>
         </div>
     );
 };
 
-const Element = ({resource, width, height}: {
+export const SimpleCarouselElement = ({resource, children, width, height}: {
     resource: Resource,
     width: number | string,
-    height: number | string
+    height: number | string,
+    children: ReactNode | ReactNode[]
 }) => (
     <div
-        className="carousel-item text-center relative snap-start"
+        tw="text-center relative snap-start"
         style={{width, height}}
     >
         <a href={resource.link}
@@ -90,7 +89,7 @@ const Element = ({resource, width, height}: {
            tw="h-full w-full aspect-video overflow-hidden block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
            style={{width, height}}
         >
-            <img src={resource.imageUrl || ''} alt={resource.title}/>
+            {children}
         </a>
         <a
             draggable={false}
