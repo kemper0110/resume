@@ -3,6 +3,7 @@ import downClosedIcon from '../assets/downClosed.svg';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+import tw from 'twin.macro';
 
 export const Accordion = ({label, children}: { label: ReactNode, children: ReactNode | ReactNode[] }) => {
     const id = useId()
