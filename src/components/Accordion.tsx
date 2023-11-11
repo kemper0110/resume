@@ -32,11 +32,3 @@ export const Accordion = ({label, children}: { label: ReactNode, children: React
         </div>
     )
 }
-/*
-
-css`
-                        input:checked + label & {
-                          transform: rotate(180deg);
-                        }
-                    `
- */

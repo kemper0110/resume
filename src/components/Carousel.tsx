@@ -8,23 +8,23 @@ export type Resource = {
 
 const Element = ({resource}: { resource: Resource }) => (
     <div
-        className="carousel-item text-center relative w-64 h-40 snap-start"
+        tw="carousel-item text-center relative w-64 h-40 snap-start"
     >
         <a href={resource.link}
-            className="h-full w-full aspect-video overflow-hidden block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
+            tw="h-full w-full aspect-video overflow-hidden block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
             // style={{backgroundImage: `url(${resource.imageUrl || ''})`}}
         >
             <img
                 src={resource.imageUrl || ''}
                 alt={resource.title}
-                className="w-full aspect-auto"
+                tw="w-full aspect-auto"
             />
         </a>
         <a
             href={resource.link}
-            className="h-full w-full aspect-video block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10"
+            tw="h-full w-full aspect-video block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10"
         >
-            <h3 className="text-white py-6 px-3 mx-auto text-xl">
+            <h3 tw="text-white py-6 px-3 mx-auto text-xl">
                 {resource.title}
             </h3>
         </a>
@@ -71,29 +71,29 @@ const Carousel = ({data}: {data: Resource[]}) => {
     }, []);
 
     return (
-        <div className="carousel mx-auto">
-            <div className="relative overflow-hidden">
-                <div className="flex justify-between absolute top-0 left-0 w-full h-full">
+        <div tw="carousel mx-auto">
+            <div tw="relative overflow-hidden">
+                <div tw="flex justify-between absolute top-0 left-0 w-full h-full">
                     <button
                         onClick={movePrev}
-                        className="md:hover:bg-blue-900/75 bg-blue-700/60 text-white w-10 h-full text-center opacity-90 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+                        tw="md:hover:bg-blue-900/75 bg-blue-700/60 text-white w-10 h-full text-center opacity-90 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
                         disabled={isDisabled('prev')}
                     >
                         <PrevIcon/>
-                        <span className="sr-only">Prev</span>
+                        <span tw="sr-only">Prev</span>
                     </button>
                     <button
                         onClick={moveNext}
-                        className="md:hover:bg-blue-900/75 bg-blue-700/60 text-white w-10 h-full text-center opacity-90 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+                        tw="md:hover:bg-blue-900/75 bg-blue-700/60 text-white w-10 h-full text-center opacity-90 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
                         disabled={isDisabled('next')}
                     >
                         <NextIcon/>
-                        <span className="sr-only">Next</span>
+                        <span tw="sr-only">Next</span>
                     </button>
                 </div>
                 <div
                     ref={carousel}
-                    className="carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+                    tw="carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
                 >
                     {
                         data.map((e, i) => <Element key={i} resource={e}/>)
@@ -107,7 +107,7 @@ const Carousel = ({data}: {data: Resource[]}) => {
 const PrevIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-20 -ml-5"
+        tw="h-12 w-20 -ml-5"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -123,7 +123,7 @@ const PrevIcon = () => (
 const NextIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-20 -ml-5"
+        tw="h-12 w-20 -ml-5"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"

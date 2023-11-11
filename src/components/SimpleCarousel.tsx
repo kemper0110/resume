@@ -84,7 +84,7 @@ const Element = ({resource, width, height}: {
     >
         <a href={resource.link}
            draggable={false}
-           className="h-full w-full aspect-video overflow-hidden block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
+           tw="h-full w-full aspect-video overflow-hidden block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
            style={{width, height}}
         >
             <img src={resource.imageUrl || ''} alt={resource.title}/>
@@ -92,9 +92,9 @@ const Element = ({resource, width, height}: {
         <a
             draggable={false}
             href={resource.link}
-            className="h-full w-full aspect-video block absolute px-5 top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10"
+            tw="h-full w-full aspect-video block absolute px-5 top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10"
         >
-            <h3 className="text-white py-6 px-3 mx-auto text-xl">
+            <h3 tw="text-white py-6 px-3 mx-auto text-xl">
                 {resource.title}
             </h3>
         </a>
@@ -105,7 +105,7 @@ const Element = ({resource, width, height}: {
 const PrevIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-20 -ml-5"
+        tw="h-12 w-20 -ml-5"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -121,7 +121,7 @@ const PrevIcon = () => (
 const NextIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-20 -ml-5"
+        tw="h-12 w-20 -ml-5"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
