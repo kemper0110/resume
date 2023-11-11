@@ -1,7 +1,7 @@
 import {FeatureList, ProjectArticle, ProjectDescription, ProjectHeader, TechnologyList} from "./Projects.tsx";
 import {Item} from "../../components/Item.tsx";
 import SourceLink from "../../components/SourceLink.tsx";
-import OpenProjectLink from "../../components/OpenProjectLink.tsx";
+import OpenProjectLink, {LinkExternal} from "../../components/OpenProjectLink.tsx";
 import spacexThumbnail from '../../assets/spacexThumbnail.png';
 import spacex from '../../assets/spacex.png';
 
@@ -38,7 +38,9 @@ const SpaceX = () => (
             <div tw={'flex gap-2'}>
                 <SourceLink href={'https://github.com/kemper0110/spacex'}/>
                 <SourceLink href={'https://github.com/kemper0110/spacex-django-react'}/>
-                <OpenProjectLink href={'https://spacex-frontend-gilt.vercel.app/'}/>
+                <OpenProjectLink target={'_blank'} href={'https://spacex-frontend-gilt.vercel.app/'}>
+                    Перейти на сайт <LinkExternal size={24}/>
+                </OpenProjectLink>
             </div>
         </ProjectDescription>
     </ProjectArticle>
