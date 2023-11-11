@@ -1,4 +1,8 @@
 import {useEffect, useRef, useState} from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import tw from 'twin.macro';
 
 export type Resource = {
     title: string

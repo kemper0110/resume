@@ -2,15 +2,33 @@ import {FeatureList, ProjectArticle, ProjectDescription, ProjectHeader, Technolo
 import {Item} from "../../components/Item.tsx";
 import SourceLink from "../../components/SourceLink.tsx";
 import OpenProjectLink, {LinkExternal} from "../../components/OpenProjectLink.tsx";
-import spacexThumbnail from '../../assets/spacexThumbnail.png';
-import spacex from '../../assets/spacex.png';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import tw from 'twin.macro';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import spacexOriginal from '@/assets/spacex.png';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import spacexJpeg from '@/assets/spacex.png?w=444&format=jpeg';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import spacexAvif from '@/assets/spacex.png?w=444&format=avif';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import spacexWebp from '@/assets/spacex.png?w=444&format=webp';
 
 
 const SpaceX = () => (
     <ProjectArticle>
-        <div tw={'mx-auto'}>
-            <a href={spacex} target={'_blank'}>
-                <img src={spacexThumbnail} alt={''}/>
+        <div tw={'flex justify-center'}>
+            <a href={spacexOriginal} target={'_blank'}>
+                <picture>
+                    <source srcSet={spacexAvif} type='image/avif'/>
+                    <source srcSet={spacexWebp} type='image/webp'/>
+                    <img src={spacexJpeg} alt={'Главный экран spacex'}/>
+                </picture>
             </a>
         </div>
         <ProjectDescription>
