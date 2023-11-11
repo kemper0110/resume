@@ -1,5 +1,8 @@
 import {TableContent, TableHeader} from "./Table.tsx";
 import {CalendarIcon, DatePeriod} from "@/components/DatePeriod.tsx";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import tw from "twin.macro";
 
 export const Education = () => {
     return (
