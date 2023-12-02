@@ -11,13 +11,7 @@ import tw from 'twin.macro';
 import spacexOriginal from '@/assets/spacex.png';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import spacexJpeg from '@/assets/spacex.png?w=444&format=jpeg';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import spacexAvif from '@/assets/spacex.png?w=444&format=avif';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import spacexWebp from '@/assets/spacex.png?w=444&format=webp';
+import spacex from '@/assets/spacex.png?w=444&format=avif;webp;jpeg&as=picture';
 
 
 const SpaceX = () => (
@@ -25,9 +19,9 @@ const SpaceX = () => (
         <div tw={'flex justify-center'}>
             <a href={spacexOriginal} target={'_blank'}>
                 <picture>
-                    <source srcSet={spacexAvif} type='image/avif'/>
-                    <source srcSet={spacexWebp} type='image/webp'/>
-                    <img src={spacexJpeg} alt={'Главный экран spacex'}/>
+                    <source srcSet={spacex.sources.avif} type='image/avif'/>
+                    <source srcSet={spacex.sources.webp} type='image/webp'/>
+                    <img width={spacex.img.w} height={spacex.img.h} src={spacex.img.src} alt={'Главный экран spacex'}/>
                 </picture>
             </a>
         </div>
