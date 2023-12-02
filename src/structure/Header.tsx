@@ -1,19 +1,14 @@
 import {TiLocation} from "react-icons/ti";
 import {BsGithub, BsTelegram} from "react-icons/bs";
 import {IoMail} from "react-icons/io5";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import avatarAvif from '@/assets/avatar/2.jpeg?w=210&format=avif';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import avatarWebp from '@/assets/avatar/2.jpeg?w=210&format=webp';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import avatarJpeg from '@/assets/avatar/2.jpeg?w=210'
 import tw from "twin.macro";
 import {css} from "@emotion/react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import avatar from '@/assets/avatar/2.jpeg?format=avif;webp;jpeg&w=220&as=picture';
 
 const Header = () => {
+    console.log(avatar)
     return (
         <div tw={'flex flex-col items-center gap-8 pt-6'}>
             <div tw={"flex md:flex-row-reverse flex-col items-center gap-x-8 gap-y-3"}>
@@ -23,9 +18,9 @@ const Header = () => {
                 ]}
                 >
                     <picture>
-                        <source srcSet={avatarAvif} type='image/avif'/>
-                        <source srcSet={avatarWebp} type='image/webp'/>
-                        <img className={'w-[210px] h-[210px]'} loading={'eager'} src={avatarJpeg} alt={'Данил Голосуев'}/>
+                        <source srcSet={avatar.sources.avif} type='image/avif'/>
+                        <source srcSet={avatar.sources.webp} type='image/webp'/>
+                        <img width={avatar.img.w} height={avatar.img.h} loading={'eager'} src={avatar.img.src} alt={'Данил Голосуев'}/>
                     </picture>
                 </div>
                 <div>
