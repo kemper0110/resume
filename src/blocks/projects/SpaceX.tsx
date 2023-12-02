@@ -21,7 +21,7 @@ const SpaceX = () => (
                 <picture>
                     <source srcSet={spacex.sources.avif} type='image/avif'/>
                     <source srcSet={spacex.sources.webp} type='image/webp'/>
-                    <img width={spacex.img.w} height={spacex.img.h} src={spacex.img.src} alt={'Главный экран spacex'}/>
+                    <img loading={'lazy'} width={spacex.img.w} height={spacex.img.h} src={spacex.img.src} alt={'Главный экран spacex'}/>
                 </picture>
             </a>
         </div>

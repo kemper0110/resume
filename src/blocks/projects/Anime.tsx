@@ -69,7 +69,7 @@ const Anime = () => {
                                 <picture>
                                     <source srcSet={e.imageUrl[0]} type={'image/avif'}/>
                                     <source srcSet={e.imageUrl[1]} type={'image/webp'}/>
-                                    <img src={e.imageUrl[2]} alt={e.title}/>
+                                    <img loading={'lazy'} src={e.imageUrl[2]} alt={e.title}/>
                                 </picture>
                             </SimpleCarouselElement>
                         ))

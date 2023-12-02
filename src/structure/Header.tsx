@@ -20,7 +20,7 @@ const Header = () => {
                     <picture>
                         <source srcSet={avatar.sources.avif} type='image/avif'/>
                         <source srcSet={avatar.sources.webp} type='image/webp'/>
-                        <img width={avatar.img.w} height={avatar.img.h} loading={'eager'} src={avatar.img.src} alt={'Данил Голосуев'}/>
+                        <img loading={'eager'} width={avatar.img.w} height={avatar.img.h} src={avatar.img.src} alt={'Данил Голосуев'}/>
                     </picture>
                 </div>
                 <div>
