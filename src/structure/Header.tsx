@@ -25,7 +25,7 @@ const Header = () => {
                     <picture>
                         <source srcSet={avatarAvif} type='image/avif'/>
                         <source srcSet={avatarWebp} type='image/webp'/>
-                        <img loading={'eager'} src={avatarJpeg} alt={'Данил Голосуев'}/>
+                        <img className={'w-[210px] h-[210px]'} loading={'eager'} src={avatarJpeg} alt={'Данил Голосуев'}/>
                     </picture>
                 </div>
                 <div>
