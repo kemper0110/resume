@@ -2,6 +2,7 @@ import {Education} from "./Education.tsx";
 import Competitions from "./Competitions.tsx";
 import SkillsTools from "./SkillsTools.tsx";
 import tw from "twin.macro";
+import {Experience} from "@/blocks/table/Experience.tsx";
 
 export const TableHeader = tw.th`md:px-3 md:py-2 md:table-cell hidden text-left md:align-top`
 export const TableContent = tw.td`px-3 py-3`
@@ -12,6 +13,7 @@ export default function Table() {
             <table tw={'w-full divide-solid divide-y dark:divide-divideDark divide-divideLight'}>
                 <tbody tw={'divide-solid divide-y dark:divide-divideDark divide-divideLight'}>
                 <Education/>
+                <Experience/>
                 <Competitions/>
                 <SkillsTools/>
                 </tbody>
