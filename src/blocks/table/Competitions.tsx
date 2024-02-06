@@ -31,7 +31,7 @@ const Competitions = () => {
                     <Accordion label={
                             <AccordionLabelWrapper>
                             <span>
-                                Разработал веб-приложение для парсинга резюме с сайта <a href={'https://hh.ru'}
+                                Разработал веб-приложение для парсинга резюме с сайта <a target={'_blank'} href={'https://hh.ru'}
                                                                                  tw='text-blue-400 underline'>hh.ru</a>,
                                 реализовал дополнительные возможности по улучшению пользовательского опыта.
                             </span>
