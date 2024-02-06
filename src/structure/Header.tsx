@@ -5,10 +5,9 @@ import tw from "twin.macro";
 import {css} from "@emotion/react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import avatar from '@/assets/avatar/2.jpeg?format=avif;webp;jpeg&w=220&as=picture';
+import avatar from '@/assets/avatar/2.jpeg?format=avif;webp;jpeg&w=300&as=picture';
 
 const Header = () => {
-    console.log(avatar)
     return (
         <div tw={'flex flex-col items-center gap-8 pt-6'}>
             <div tw={"flex md:flex-row-reverse flex-col items-center gap-x-8 gap-y-3"}>
