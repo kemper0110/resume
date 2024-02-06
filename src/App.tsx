@@ -34,7 +34,7 @@ const useDarkState = (): [boolean, (cb: CbFn) => void] => {
 const DarkModeButton = () => {
     const [dark, setDark] = useDarkState()
     return (
-        <button tw={'absolute md:right-5 md:top-3 right-0'}
+        <button name={'Темная тема / Светлая тема'} tw={'absolute md:right-5 md:top-3 right-0'}
                 onClick={() => setDark(d => !d)}
         >
             {
