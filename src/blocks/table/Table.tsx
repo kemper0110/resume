@@ -1,5 +1,5 @@
 import {Education} from "./Education.tsx";
-import Experience from "./Experience.tsx";
+import Competitions from "./Competitions.tsx";
 import SkillsTools from "./SkillsTools.tsx";
 import tw from "twin.macro";
 
@@ -12,7 +12,7 @@ export default function Table() {
             <table tw={'w-full divide-solid divide-y dark:divide-divideDark divide-divideLight'}>
                 <tbody tw={'divide-solid divide-y dark:divide-divideDark divide-divideLight'}>
                 <Education/>
-                <Experience/>
+                <Competitions/>
                 <SkillsTools/>
                 </tbody>
                 <tfoot>

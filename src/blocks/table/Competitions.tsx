@@ -6,11 +6,11 @@ import {TableContent, TableHeader} from "./Table.tsx";
 import tw from "twin.macro";
 import {CalendarIcon} from "@/components/DatePeriod.tsx";
 
-const Experience = () => {
+const Competitions = () => {
     return (
         <tr>
             <TableHeader>
-                Опыт работы
+                Участие в конкурсах
             </TableHeader>
             <TableContent>
                 <CompanyWrapper>
@@ -155,4 +155,4 @@ const AccordionLabelWrapper = tw.div`max-w-[800px]`
 const AccordionContentWrapper = tw.div`py-3`
 const SimpleDate = tw.div`flex gap-1 items-center`
 
-export default Experience;
+export default Competitions;
