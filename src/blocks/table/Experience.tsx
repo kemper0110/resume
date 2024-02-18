@@ -26,9 +26,9 @@ export const Experience = () => {
                         <Title>Full-stack developer - IT-Delta</Title>
                         <SimpleDate>
                             <CalendarIcon/>
-                            <time dateTime={'2023-03'}>Май 2023</time>
+                            <time dateTime={'2023-08'}>Август 2023</time>
                             <span>-</span>
-                            <time dateTime={'2024-06'}>По настоящее время</time>
+                            <time dateTime={'2024-02'}>Февраль 2024</time>
                         </SimpleDate>
                     </TitleWrapper>
                     <ItemContainer>
