@@ -18,14 +18,13 @@ const useDarkState = (): [boolean, (cb: CbFn) => void] => {
     const setDark = (cb: CbFn) => {
         _setDark(dark => {
             const new_dark = cb(dark)
-            if (localStorage)
-                if (new_dark) {
-                    document.documentElement.classList.add('dark')
-                    localStorage.theme = 'dark'
-                } else {
-                    document.documentElement.classList.remove('dark')
-                    localStorage.theme = 'light'
-                }
+            if (new_dark) {
+                document.documentElement.classList.add('dark')
+                if(localStorage) localStorage.theme = 'dark'
+            } else {
+                document.documentElement.classList.remove('dark')
+                if(localStorage) localStorage.theme = 'light'
+            }
             return new_dark
         })
     }
