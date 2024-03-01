@@ -13,7 +13,7 @@ type CbFn = (dark: boolean) => boolean
 const useDarkState = (): [boolean, (cb: CbFn) => void] => {
     const [dark, _setDark] = useState(
         localStorage && localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        (!(localStorage && 'theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
     )
     const setDark = (cb: CbFn) => {
         _setDark(dark => {
