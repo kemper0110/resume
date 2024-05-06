@@ -15,10 +15,61 @@ const Competitions = () => {
             <TableContent>
                 <CompanyWrapper>
                     <TitleWrapper>
+                        <Title>Хакатон 2023 Осень - Тинькофф</Title>
+                        <SimpleDate>
+                            <CalendarIcon/>
+                            <time dateTime={'2023-10'}>Октябрь 2023</time>
+                        </SimpleDate>
+                    </TitleWrapper>
+                    <ItemContainer>
+                        <Item>React</Item>
+                        <Item>Tailwind CSS</Item>
+                        <Item>Server Sent Events</Item>
+                        <Item>Spring WebFlux</Item>
+                        <Item>PostgreSQL</Item>
+                    </ItemContainer>
+                    <Accordion label={
+                        <AccordionLabelWrapper>
+                            <span>Разработали API и интерфейс сервиса турниров для игры в настольный футбол</span>
+                            <ResultWrapper>
+                                <Cup/>
+                                <ResultText>Второе место</ResultText>
+                            </ResultWrapper>
+                        </AccordionLabelWrapper>
+                    }
+                    >
+                        <AccordionContentWrapper>
+                            <span>Выполненные требования: </span>
+                            <ul tw={'list-disc ms-5'}>
+                                <li>пользователи могут объединяться в команды по 2 человека;</li>
+                                <li>отображение списка турниров и команд;</li>
+                                <li>открытие и завершение турниров судьей;</li>
+                                <li>ввод счета сыгранного матча в турнирной сетке.</li>
+                            </ul>
+                            <span>Дополнительно реализовано: </span>
+                            <ul tw={'list-none ms-5'}>
+                                <li className={'flex items-center'}><Fire/>история проведенных турниров;</li>
+                                <li className={'flex'}>
+                                    <Fire tw={'text-red-500 shrink-0 mt-0.5'}/>
+                                    отличительная фича нашей реализации.
+                                    <br/>
+                                    Применили Server Sent Events для улучшения пользовательского опыта.
+                                    <br/>
+                                    SSE позволяют сообщать всем пользователям на странице
+                                    об изменениях в турнирной сетке в режиме реального времени.
+                                </li>
+                            </ul>
+                        </AccordionContentWrapper>
+                    </Accordion>
+                </CompanyWrapper>
+
+
+                <CompanyWrapper>
+                    <TitleWrapper>
                         <Title>День карьеры ДГТУ 2023 - Вебант</Title>
                         <SimpleDate>
                             <CalendarIcon/>
-                            <time dateTime={'2021-03'}>Март 2023</time>
+                            <time dateTime={'2023-03'}>Март 2023</time>
                         </SimpleDate>
                     </TitleWrapper>
                     <ItemContainer>
@@ -29,18 +80,19 @@ const Competitions = () => {
                         <Item>Chrome extension</Item>
                     </ItemContainer>
                     <Accordion label={
-                            <AccordionLabelWrapper>
+                        <AccordionLabelWrapper>
                             <span>
-                                Разработал веб-приложение для парсинга резюме с сайта <a target={'_blank'} href={'https://hh.ru'}
-                                                                                 tw='text-blue-400 underline'>hh.ru</a>,
+                                Разработал веб-приложение для парсинга резюме с сайта <a target={'_blank'}
+                                                                                         href={'https://hh.ru'}
+                                                                                         tw='text-blue-400 underline'>hh.ru</a>,
                                 реализовал дополнительные возможности по улучшению пользовательского опыта.
                             </span>
-                                <ResultWrapper>
-                                    <Cup/>
-                                    <ResultText>Победитель</ResultText>
-                                </ResultWrapper>
-                            </AccordionLabelWrapper>
-                        }
+                            <ResultWrapper>
+                                <Cup/>
+                                <ResultText>Победитель</ResultText>
+                            </ResultWrapper>
+                        </AccordionLabelWrapper>
+                    }
                     >
                         <AccordionContentWrapper>
                             <span>Выполненные требования: </span>
@@ -52,11 +104,11 @@ const Competitions = () => {
                             <span>Дополнительно реализовано: </span>
                             <ul tw={'list-none ms-5'}>
                                 <li>
-                                    <BsFire tw={'inline'}/>
+                                    <Fire/>
                                     chrome extension content script - встраивает в страницу резюме кнопку для парсинга
                                 </li>
                                 <li>
-                                    <BsFire tw={'inline'}/>
+                                    <Fire/>
                                     chrome extension popup script - добавляет в браузер popup окно с возможностью
                                     моментального
                                     парсинга прямо из браузера
@@ -69,10 +121,10 @@ const Competitions = () => {
 
                 <CompanyWrapper>
                     <TitleWrapper>
-                        <Title>Хакатон 2023 - Ростелеком</Title>
+                        <Title>Хакатон 2023 Весна - Ростелеком</Title>
                         <SimpleDate>
                             <CalendarIcon/>
-                            <time dateTime={'2021-03'}>Март 2023</time>
+                            <time dateTime={'2023-03'}>Март 2023</time>
                         </SimpleDate>
                     </TitleWrapper>
                     <ItemContainer>
@@ -149,6 +201,7 @@ const TitleWrapper = tw.div`flex flex-wrap justify-between`
 const ResultWrapper = tw.div`flex gap-2 items-center`
 const Cup = TfiCup
 const ResultText = tw.div`text-lg`
+const Fire = tw(BsFire)`mr-1 inline`
 const CompanyWrapper = tw.div`pb-5`
 const ItemContainer = tw.div`flex flex-wrap gap-x-3 gap-y-1 mt-2`
 const AccordionLabelWrapper = tw.div`max-w-[800px]`
