@@ -1,5 +1,5 @@
 import {TfiCup} from "react-icons/tfi";
-import {Item} from "../../components/Item.tsx";
+import {Tag} from "../../components/Tag.tsx";
 import {BsFire} from "react-icons/bs";
 import {Accordion} from "../../components/Accordion.tsx";
 import {TableContent, TableHeader} from "./Table.tsx";
@@ -22,11 +22,11 @@ const Competitions = () => {
                         </SimpleDate>
                     </TitleWrapper>
                     <ItemContainer>
-                        <Item>React</Item>
-                        <Item>Tailwind CSS</Item>
-                        <Item>Server Sent Events</Item>
-                        <Item>Spring WebFlux</Item>
-                        <Item>PostgreSQL</Item>
+                        <Tag>React</Tag>
+                        <Tag>Tailwind CSS</Tag>
+                        <Tag>Server Sent Events</Tag>
+                        <Tag>Spring WebFlux</Tag>
+                        <Tag>PostgreSQL</Tag>
                     </ItemContainer>
                     <Accordion label={
                         <AccordionLabelWrapper>
@@ -73,11 +73,11 @@ const Competitions = () => {
                         </SimpleDate>
                     </TitleWrapper>
                     <ItemContainer>
-                        <Item>React</Item>
-                        <Item>NodeJS</Item>
-                        <Item>ExpressJS</Item>
-                        <Item>PostgreSQL</Item>
-                        <Item>Chrome extension</Item>
+                        <Tag>React</Tag>
+                        <Tag>NodeJS</Tag>
+                        <Tag>ExpressJS</Tag>
+                        <Tag>PostgreSQL</Tag>
+                        <Tag>Chrome extension</Tag>
                     </ItemContainer>
                     <Accordion label={
                         <AccordionLabelWrapper>
@@ -128,8 +128,8 @@ const Competitions = () => {
                         </SimpleDate>
                     </TitleWrapper>
                     <ItemContainer>
-                        <Item>React</Item>
-                        <Item>XLSX</Item>
+                        <Tag>React</Tag>
+                        <Tag>XLSX</Tag>
                     </ItemContainer>
                     <Accordion label={
                         <AccordionLabelWrapper>
@@ -165,9 +165,9 @@ const Competitions = () => {
                         </SimpleDate>
                     </TitleWrapper>
                     <ItemContainer>
-                        <Item>Python</Item>
-                        <Item>Selenium</Item>
-                        <Item>PyQT5</Item>
+                        <Tag>Python</Tag>
+                        <Tag>Selenium</Tag>
+                        <Tag>PyQT5</Tag>
                     </ItemContainer>
                     <Accordion label={
                         <AccordionLabelWrapper>

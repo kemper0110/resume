@@ -14,8 +14,8 @@ export default function Table() {
                 <tbody tw={'divide-solid divide-y dark:divide-divideDark divide-divideLight'}>
                 <Education/>
                 <Experience/>
-                <Competitions/>
                 <SkillsTools/>
+                <Competitions/>
                 </tbody>
                 <tfoot>
                 <tr>

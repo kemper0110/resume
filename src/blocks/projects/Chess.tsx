@@ -1,5 +1,5 @@
 import {FeatureList, ProjectArticle, ProjectDescription, ProjectHeader, TechnologyList} from "./Projects.tsx";
-import {Item} from "../../components/Item.tsx";
+import {Tag} from "../../components/Tag.tsx";
 import SourceLink from "../../components/SourceLink.tsx";
 import SimpleCarousel, {SimpleCarouselElement} from "../../components/SimpleCarousel.tsx";
 import {Resource} from "../../components/Carousel.tsx";
@@ -75,9 +75,9 @@ const Chess = () => (
             </FeatureList>
             <span>Используемые технологии</span>
             <TechnologyList>
-                <Item>C++</Item>
-                <Item>WebSocket</Item>
-                <Item>SFML</Item>
+                <Tag>C++</Tag>
+                <Tag>WebSocket</Tag>
+                <Tag>SFML</Tag>
             </TechnologyList>
             <SourceLink href={'https://github.com/kemper0110/sfml_chess'}/>
         </ProjectDescription>

@@ -1,18 +1,17 @@
-import {TiLocation} from "react-icons/ti";
 import {BsGithub, BsTelegram} from "react-icons/bs";
 import {IoMail} from "react-icons/io5";
 import tw from "twin.macro";
 import {css} from "@emotion/react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import avatar from '@/assets/avatar/2.jpeg?format=avif;webp;jpeg&w=300&as=picture';
+import avatar from '@/assets/avatar/3-crop.jpg?format=avif;webp;jpg&w=300&as=picture';
 
 const Header = () => {
     return (
         <div tw={'flex flex-col items-center gap-8 pt-6'}>
             <div tw={"flex md:flex-row-reverse flex-col items-center gap-x-8 gap-y-3"}>
                 <div css={[
-                    tw`w-[210px] h-[210px]`,
+                    tw`w-[210px] h-[210px] shrink-0`,
                     css`clip-path: circle(100px at 50% 50%)`
                 ]}
                 >
@@ -23,16 +22,14 @@ const Header = () => {
                     </picture>
                 </div>
                 <div>
-                    <div tw="flex flex-col gap-1 items-center">
+                    <div tw="flex flex-col items-center">
                         <div tw="text-3xl font-extrabold">Данил Голосуев</div>
-                        <div tw="font-medium">Full-stack Developer</div>
+                        <div tw="font-medium mt-1">Backend Engineer (Platform & Tooling)</div>
+                        <div tw="font-medium">3 года коммерческого опыта</div>
+                        <div tw="font-medium text-center">Platform Engineer • Software Engineer (Backend) • Fullstack Engineer (Backend-leaning)</div>
                     </div>
-                    <address tw={'flex flex-col gap-3'}>
+                    <address tw={'flex flex-col gap-1'}>
                         <div tw={'flex flex-wrap gap-x-4 justify-center items-center'}>
-                            <div tw={'flex gap-1 items-center'}>
-                                <TiLocation/>
-                                <span>Ростов-на-Дону</span>
-                            </div>
                             <div tw={'flex gap-1 items-center'}>
                                 <IoMail/>
                                 <a href="mailto:danil2003.2043@gmail.com?subject=Предложение о сотрудничестве"

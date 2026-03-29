@@ -1,7 +1,6 @@
 import Header from "./structure/Header.tsx";
 import Content from "./structure/Content.tsx";
 import Table from "./blocks/table/Table.tsx";
-import Projects from "./blocks/projects/Projects.tsx";
 import {MdDarkMode, MdLightMode} from "react-icons/md";
 import {useState} from "react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -52,7 +51,6 @@ function App() {
                 <Header/>
                 <Content>
                     <Table/>
-                    <Projects/>
                 </Content>
             </div>
         </div>

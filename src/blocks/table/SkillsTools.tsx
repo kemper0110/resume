@@ -5,8 +5,7 @@
         asm8086 STL
 */
 
-import {Item} from "../../components/Item.tsx";
-import {ReactNode} from "react";
+import {Tag} from "../../components/Tag.tsx";
 import {TableContent, TableHeader} from "./Table.tsx";
 import tw from "twin.macro";
 
@@ -15,103 +14,56 @@ const SkillsTools = () => {
         <tr>
             <TableHeader>Skills & Tools</TableHeader>
             <TableContent>
-                <FeatureTable caption={'Languages'}>
+                <table>
+                    <tbody>
                     <tr>
                         <Heading>Frontend</Heading>
                         <Data>
-                            <Item>HTML</Item>
-                            <Item>CSS</Item>
-                            <Item>JavaScript</Item>
-                            <Item>TypeScript</Item>
+                            <Tag>React</Tag>
+                            <Tag>TypeScript</Tag>
+                            <Tag>Tailwind CSS</Tag>
+                            <Tag>Архитектура сложных UI</Tag>
                         </Data>
                     </tr>
                     <tr>
                         <Heading>Backend</Heading>
                         <Data>
-                            <Item>Java</Item>
-                            <Item>SQL</Item>
-                            <Item>C++</Item>
-                            <Item>C#</Item>
-                            <Item>Python</Item>
-                            <Item>JavaScript</Item>
-                            <Item>TypeScript</Item>
-                        </Data>
-                    </tr>
-                </FeatureTable>
-                <FeatureTable caption={'Technologies'}>
-                    <tr>
-                        <Heading>Frontend</Heading>
-                        <Data>
-                            <Item>Tailwind CSS</Item>
-                            <Item>React Query</Item>
-                            <Item>Redux Toolkit</Item>
-                            <Item>Zustand</Item>
+                            <Tag>Node.js</Tag>
+                            <Tag>Deno</Tag>
+                            <Tag>TypeScript</Tag>
+                            <Tag>Java</Tag>
+                            <Tag>Golang</Tag>
+                            <Tag>Multithreading</Tag>
+                            <Tag>Kafka</Tag>
+                            <Tag>PostgreSQL</Tag>
+                            <Tag>API Design</Tag>
                         </Data>
                     </tr>
                     <tr>
-                        <Heading>Backend</Heading>
+                        <Heading>Infra</Heading>
                         <Data>
-                            <Item>Spring</Item>
-                            <Item>PostgreSQL</Item>
-                            <Item>HTTP/REST</Item>
+                            <Tag>Docker</Tag>
+                            <Tag>Kubernetes</Tag>
+                            <Tag>Helm</Tag>
                         </Data>
                     </tr>
-                </FeatureTable>
-                <FeatureTable caption={'Tools'}>
-                    <tr>
-                        <Heading>Coding</Heading>
-                        <Data>
-                            <Item>Git</Item>
-                            <Item>Ubuntu</Item>
-                        </Data>
-                    </tr>
-                </FeatureTable>
-                <FeatureTable caption={'Knowledge'}>
-                    <tr>
-                        <Heading>Programming</Heading>
-                        <Data>
-                            <Item>ООП</Item>
-                            <Item>Многопоточность и многозадачность</Item>
-                            <Item>Реляционные базы данных</Item>
-                        </Data>
-                    </tr>
-                    <tr>
-                        <Heading>Computer Science</Heading>
-                        <Data>
-                            <Item>ISO OSI</Item>
-                            <Item>TCP</Item>
-                            <Item>UDP</Item>
-                            <Item>HTTP</Item>
-                            <Item>REST API</Item>
-                            <Item>asm8086</Item>
-                        </Data>
-                    </tr>
-                    <tr>
-                        <Heading>Data structure</Heading>
-                        <Data>
-                            <Item>Стек</Item>
-                            <Item>Очередь</Item>
-                            <Item>Динамический массив</Item>
-                            <Item>Бинарное дерево</Item>
-                            <Item>Хеш-таблица</Item>
-                        </Data>
-                    </tr>
-                </FeatureTable>
+                    </tbody>
+                </table>
             </TableContent>
         </tr>
     );
 };
 
-const FeatureTable = ({caption, children}: { caption: string, children: ReactNode | ReactNode[] }) => (
-    <table tw={'mt-4'}>
-        <caption tw={'text-lg font-semibold text-left align-top'}>
-            {caption}
-        </caption>
-        <tbody>
-        {children}
-        </tbody>
-    </table>
-)
+// const FeatureTable = ({caption, children}: { caption: string, children: ReactNode | ReactNode[] }) => (
+//     <table tw={'mt-4'}>
+//         <caption tw={'text-lg font-semibold text-left align-top'}>
+//             {caption}
+//         </caption>
+//         <tbody>
+//         {children}
+//         </tbody>
+//     </table>
+// )
 const Heading = tw.th`dark:text-slate-400 dark:font-light font-thin min-w-[100px] text-left align-top`
 const Data = tw.td`flex flex-wrap gap-1`
 

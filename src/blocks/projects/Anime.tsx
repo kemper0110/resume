@@ -1,4 +1,4 @@
-import {Item} from "../../components/Item.tsx";
+import {Tag} from "../../components/Tag.tsx";
 import {Resource} from "../../components/Carousel.tsx";
 
 import main from '@/assets/anime/main.png';
@@ -92,14 +92,14 @@ const Anime = () => {
                 </FeatureList>
                 <span>Используемые технологии</span>
                 <TechnologyList>
-                    <Item>Java Spring</Item>
-                    <Item>PostgreSQL</Item>
-                    <Item>JWT</Item>
-                    <Item>React</Item>
-                    <Item>TypeScript</Item>
-                    <Item>Zustand</Item>
-                    <Item>Tanstack Query</Item>
-                    <Item>Tailwind CSS</Item>
+                    <Tag>Java Spring</Tag>
+                    <Tag>PostgreSQL</Tag>
+                    <Tag>JWT</Tag>
+                    <Tag>React</Tag>
+                    <Tag>TypeScript</Tag>
+                    <Tag>Zustand</Tag>
+                    <Tag>Tanstack Query</Tag>
+                    <Tag>Tailwind CSS</Tag>
                 </TechnologyList>
                 <SourceLink href={'https://github.com/kemper0110/video-library'}/>
             </ProjectDescription>

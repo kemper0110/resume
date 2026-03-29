@@ -1,5 +1,5 @@
 import {FeatureList, ProjectArticle, ProjectDescription, ProjectHeader, TechnologyList} from "./Projects.tsx";
-import {Item} from "../../components/Item.tsx";
+import {Tag} from "../../components/Tag.tsx";
 import SourceLink from "../../components/SourceLink.tsx";
 import OpenProjectLink, {LinkExternal} from "../../components/OpenProjectLink.tsx";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -39,13 +39,13 @@ const SpaceX = () => (
             </FeatureList>
             <span>Используемые технологии</span>
             <TechnologyList>
-                <Item>Python</Item>
-                <Item>Django</Item>
-                <Item>PostgreSQL</Item>
-                <Item>React</Item>
-                <Item>React Query</Item>
-                <Item>TypeScript</Item>
-                <Item>TailwindCSS</Item>
+                <Tag>Python</Tag>
+                <Tag>Django</Tag>
+                <Tag>PostgreSQL</Tag>
+                <Tag>React</Tag>
+                <Tag>React Query</Tag>
+                <Tag>TypeScript</Tag>
+                <Tag>TailwindCSS</Tag>
             </TechnologyList>
             <div tw={'flex gap-2'}>
                 <SourceLink href={'https://github.com/kemper0110/spacex'}/>
